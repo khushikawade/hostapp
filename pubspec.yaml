@@ -66,6 +66,15 @@ flutter:
     - assets/path.png
     - assets/common_bg@2x.png
     - assets/arrow.png
+    - assets/Ellipse.png
+    - assets/email.png
+    - assets/location.png
+    - assets/Logout.png
+    - assets/support.png
+    - assets/Vector.png
+    - assets/reva_logo.png
+    - assets/bank.png
+    - assets/phone.png
 
     
 
