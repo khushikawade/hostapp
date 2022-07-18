@@ -6,7 +6,7 @@ class LineCharts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const cutOffYValue = 0.0;
-    const yearTextStyle = TextStyle(fontSize: 10, color: Colors.black);
+    const yearTextStyle = TextStyle(fontSize: 10, color: Color(0xFFA1A1A1));
 
     return Container(
       decoration: BoxDecoration(color: Color(0xffffffff)),

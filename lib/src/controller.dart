@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hostapp/src/chart.dart';
 import 'package:number_paginator/number_paginator.dart';
 
-class Charging2 extends StatelessWidget {
-  const Charging2({Key? key}) : super(key: key);
+class Controller extends StatelessWidget {
+  const Controller({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -14,13 +14,13 @@ class Charging2 extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const ChargingPage2(title: 'Charging'),
+      home: const ControllerPage(title: 'Charging'),
     );
   }
 }
 
-class ChargingPage2 extends StatefulWidget {
-  const ChargingPage2({
+class ControllerPage extends StatefulWidget {
+  const ControllerPage({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -28,10 +28,10 @@ class ChargingPage2 extends StatefulWidget {
   final String title;
 
   @override
-  State<ChargingPage2> createState() => _ChargingPage2State();
+  State<ControllerPage> createState() => _ControllerPageState();
 }
 
-class _ChargingPage2State extends State<ChargingPage2> {
+class _ControllerPageState extends State<ControllerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +47,7 @@ class _ChargingPage2State extends State<ChargingPage2> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Charging",
+              "Controller",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w700,
@@ -149,17 +149,23 @@ class _ChargingPage2State extends State<ChargingPage2> {
                                         Text(" ")
                                       ]),
                                 ),
-                                test('Registration Date', 'In Progress'),
+                                test('Status', 'In Progress'),
                                 Divide(),
-                                test('Status', 'Running'),
+                                test('Start Time', '12:45 PM'),
                                 Divide(),
-                                test('Firmware Version', 'EV.206'),
+                                test('United Consumed', '6 KWh'),
                                 Divide(),
-                                test('Update Firmware', 'Ev.208'),
+                                test('Parking Duration', '2 Hours'),
                                 Divide(),
-                                test('Update Name', 'Joy Johnson'),
+                                test('Session Id', '123456'),
                                 Divide(),
-                                test('Location', 'ltaly'),
+                                test('Vehicle Id', '123456'),
+                                Divide(),
+                                test('Vehicle Registration No.', '123456'),
+                                Divide(),
+                                test('Vehicle Name', 'Activa'),
+                                Divide(),
+                                test('Power', '76.7094'),
                                 Padding(padding: const EdgeInsets.only(top: 30))
                               ],
                             ),

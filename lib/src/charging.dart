@@ -57,10 +57,11 @@ class _ChargingPageState extends State<ChargingPage> {
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Charging",
-              style: TextStyle(color: Colors.black),
-            ),
+            Text("Charging",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 32)),
           ],
         ),
         actions: [
@@ -130,68 +131,37 @@ class _ChargingPageState extends State<ChargingPage> {
                               children: <Widget>[
                                 Padding(
                                   padding:
-                                      const EdgeInsets.fromLTRB(23, 20, 23, 20),
+                                      const EdgeInsets.fromLTRB(23, 20, 23, 4),
                                   child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        const Text("Controller Id",
+                                        const Text("Controller ID",
                                             style: TextStyle(
-                                                fontWeight: FontWeight.bold)),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15)),
                                         Image.asset("assets/arrow.png"),
                                       ]),
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.fromLTRB(23, 5, 23, 8),
+                                      const EdgeInsets.fromLTRB(23, 5, 23, 17),
                                   child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: const [
-                                        Text("1523697125"),
+                                        Text("1234456789",
+                                            style: TextStyle(
+                                                color: Color(0XFF949495),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500)),
                                         Text(" ")
                                       ]),
                                 ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(23, 0, 23, 8),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: const [
-                                        Expanded(
-                                            flex: 3,
-                                            child: Text("Registration Date")),
-                                        Expanded(
-                                            flex: 1,
-                                            child: Text("In Progress")),
-                                      ]),
-                                ),
-                                const Divider(
-                                  thickness: 0.8, // thickness of the line
-                                  indent:
-                                      20, // empty space to the leading edge of divider.
-                                  endIndent:
-                                      20, // empty space to the trailing edge of the divider.
-                                  color: Colors
-                                      .grey, // The color to use when painting the line.
-                                  // height: 0, // The divider's height extent.
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(23, 8, 23, 20),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Expanded(
-                                            flex: 6,
-                                            child: const Text("Status")),
-                                        Expanded(
-                                            flex: 2,
-                                            child: const Text("Running")),
-                                      ]),
-                                ),
+                                test('Registration Date', 'In Progress'),
+                                Divide(),
+                                test('Status', 'Running'),
+                                Padding(padding: EdgeInsets.only(top: 20))
                               ],
                             ),
                           ),
@@ -236,6 +206,38 @@ class _ChargingPageState extends State<ChargingPage> {
         ],
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget test(title, description) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(23, 0, 23, 8),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Expanded(
+            flex: 3,
+            child: Text(title,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Color(0xFF22334F)))),
+        Expanded(
+            flex: 1,
+            child: Text(description,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Color(0xFF949495)))),
+      ]),
+    );
+  }
+
+  Widget Divide() {
+    return const Divider(
+      thickness: 0.8, // thickness of the line
+      indent: 20, // empty space to the leading edge of divider.
+      endIndent: 20, // empty space to the trailing edge of the divider.
+      color: Color(0xFFD8D8D8), // The color to use when painting the line.
+      // height: 0, // The divider's height extent.
     );
   }
 }

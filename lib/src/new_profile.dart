@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class NewProfile extends StatelessWidget {
@@ -50,7 +48,10 @@ class _NewProfilePageState extends State<NewProfilePage> {
                     padding: EdgeInsets.all(8.0),
                     child: Text("Kyle Grave ",
                         style: TextStyle(
-                            fontSize: 25, fontFamily: "SFPRODISPLAYMEDIUM")),
+                          fontSize: 25,
+                          fontFamily: "SFPRODISPLAY",
+                          fontWeight: FontWeight.bold,
+                        )),
                   ),
                   Image.asset("assets/Vector.png"),
                 ],
@@ -58,46 +59,16 @@ class _NewProfilePageState extends State<NewProfilePage> {
             ),
             test(
                 "assets/phone.png", 'Email Address', 'kylegrave1234@gamil.com'),
-            const Divider(
-              thickness: 0.8, // thickness of the line
-              indent: 20, // empty space to the leading edge of divider.
-              endIndent: 20, // empty space to the trailing edge of the divider.
-              color: Colors.grey, // The color to use when painting the line.
-              // height: 0, // The divider's height extent.
-            ),
+            divide(),
             test("assets/phone.png", 'Mobile No.', '123456789'),
-            const Divider(
-              thickness: 0.8, // thickness of the line
-              indent: 20, // empty space to the leading edge of divider.
-              endIndent: 20, // empty space to the trailing edge of the divider.
-              color: Colors.grey, // The color to use when painting the line.
-              // height: 0, // The divider's height extent.
-            ),
+            divide(),
             test("assets/phone.png", 'Host Address',
                 '110 W Rolly St, Henderson'),
-            const Divider(
-              thickness: 0.8, // thickness of the line
-              indent: 20, // empty space to the leading edge of divider.
-              endIndent: 20, // empty space to the trailing edge of the divider.
-              color: Colors.grey, // The color to use when painting the line.
-              // height: 0, // The divider's height extent.
-            ),
+            divide(),
             test("assets/phone.png", 'Bank Account Details', '1632 960209'),
-            const Divider(
-              thickness: 0.8, // thickness of the line
-              indent: 20, // empty space to the leading edge of divider.
-              endIndent: 20, // empty space to the trailing edge of the divider.
-              color: Colors.grey, // The color to use when painting the line.
-              // height: 0, // The divider's height extent.
-            ),
+            divide(),
             test("assets/phone.png", 'Support', 'Help & Support'),
-            const Divider(
-              thickness: 0.8, // thickness of the line
-              indent: 20, // empty space to the leading edge of divider.
-              endIndent: 20, // empty space to the trailing edge of the divider.
-              color: Colors.grey, // The color to use when painting the line.
-              // height: 0, // The divider's height extent.
-            )
+            divide(),
           ]),
         ),
       ],
@@ -117,29 +88,37 @@ class _NewProfilePageState extends State<NewProfilePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(image),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                   height: 15,
                 ),
-                Text(title),
+                Text(title,
+                    style: const TextStyle(
+                        fontFamily: "SFPRODISPLAY",
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                        fontSize: 14)),
               ],
             ),
           ),
-          Expanded(child: Text(description))
+          Expanded(
+              child: Text(description,
+                  style: const TextStyle(
+                      fontFamily: "SFPRODISPLAY",
+                      fontWeight: FontWeight.w400,
+                      color: Color(0XFF7C98AB))))
         ],
       ),
     );
   }
-  // Widget divide(image, title, description) {
-  //   return Padding(
-  //     padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-  //      const Divider(
-  //             thickness: 0.8, // thickness of the line
-  //             indent: 20, // empty space to the leading edge of divider.
-  //             endIndent: 20, // empty space to the trailing edge of the divider.
-  //             color: Colors.grey, // The color to use when painting the line.
-  //             // height: 0, // The divider's height extent.
-  //           )
-  //   );
-  // }
+
+  Widget divide() {
+    return const Divider(
+      thickness: 0.8, // thickness of the line
+      indent: 20, // empty space to the leading edge of divider.
+      endIndent: 20, // empty space to the trailing edge of the divider.
+      color: Colors.grey, // The color to use when painting the line.
+      // height: 0, // The divider's height extent.
+    );
+  }
 }

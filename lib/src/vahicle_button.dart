@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hostapp/src/chart.dart';
 import 'package:number_paginator/number_paginator.dart';
 
-class Charging2 extends StatelessWidget {
-  const Charging2({Key? key}) : super(key: key);
+class Button extends StatelessWidget {
+  const Button({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -14,13 +14,13 @@ class Charging2 extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const ChargingPage2(title: 'Charging'),
+      home: const ButtonPage(title: 'Charging'),
     );
   }
 }
 
-class ChargingPage2 extends StatefulWidget {
-  const ChargingPage2({
+class ButtonPage extends StatefulWidget {
+  const ButtonPage({
     Key? key,
     required this.title,
   }) : super(key: key);
@@ -28,12 +28,23 @@ class ChargingPage2 extends StatefulWidget {
   final String title;
 
   @override
-  State<ChargingPage2> createState() => _ChargingPage2State();
+  State<ButtonPage> createState() => _ButtonPageState();
 }
 
-class _ChargingPage2State extends State<ChargingPage2> {
+class _ButtonPageState extends State<ButtonPage> {
+  int _counter = 0;
+  int _numPages = 4;
+  int _currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
+    var pages = List.generate(
+      _numPages,
+      (index) => Center(
+          // child: Text("Page ${index + 1}"),
+          ),
+    );
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -46,13 +57,11 @@ class _ChargingPage2State extends State<ChargingPage2> {
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Charging",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 32),
-            ),
+            Text("Home",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 32)),
           ],
         ),
         actions: [
@@ -120,47 +129,8 @@ class _ChargingPage2State extends State<ChargingPage2> {
                               // crossAxisAlignment: CrossAxisAlignment.stretch,
                               // mainAxisSize: MainAxisSize.max,
                               children: <Widget>[
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(23, 20, 23, 4),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        const Text("Controller ID",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 15)),
-                                        Image.asset("assets/arrow.png"),
-                                      ]),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(23, 5, 23, 17),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: const [
-                                        Text("1234456789",
-                                            style: TextStyle(
-                                                color: Color(0XFF949495),
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w500)),
-                                        Text(" ")
-                                      ]),
-                                ),
-                                test('Registration Date', 'In Progress'),
-                                Divide(),
-                                test('Status', 'Running'),
-                                Divide(),
-                                test('Firmware Version', 'EV.206'),
-                                Divide(),
-                                test('Update Firmware', 'Ev.208'),
-                                Divide(),
-                                test('Update Name', 'Joy Johnson'),
-                                Divide(),
-                                test('Location', 'ltaly'),
-                                Padding(padding: const EdgeInsets.only(top: 30))
+                                test('Vehicle id'),
+                                Padding(padding: EdgeInsets.only(top: 20))
                               ],
                             ),
                           ),
@@ -181,24 +151,43 @@ class _ChargingPage2State extends State<ChargingPage2> {
     );
   }
 
-  Widget test(title, description) {
+  Widget test(title) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(23, 5, 23, 5),
+      padding: const EdgeInsets.fromLTRB(23, 20, 23, 8),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Expanded(
-            flex: 4,
+            flex: 3,
             child: Text(title,
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
                     color: Color(0xFF22334F)))),
         Expanded(
-            flex: 2,
-            child: Text(description,
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    color: Color(0xFF949495)))),
+          flex: 1,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: Color(0XFFD91F5D),
+                //padding: const EdgeInsets.fromLTRB(140, 12, 10, 12),
+                // padding: const EdgeInsets.fromLTRB(10, 10, 12, 12),
+                shape: const StadiumBorder()),
+            onPressed: () {
+              // Navigator.pop(context);
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                Text(
+                  "Start",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFFFFFFFF),
+                      fontFamily: 'Poppins-Regular'),
+                ),
+              ],
+            ),
+          ),
+        )
       ]),
     );
   }

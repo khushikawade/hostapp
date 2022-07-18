@@ -57,10 +57,11 @@ class _PaymentPageState extends State<PaymentPage> {
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Payment",
-              style: TextStyle(color: Colors.black),
-            ),
+            Text("Payment",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 32)),
           ],
         ),
         actions: [
@@ -117,7 +118,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       itemCount: 4,
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
-                          padding: const EdgeInsets.fromLTRB(15.0, 15, 15, 0),
+                          padding: const EdgeInsets.fromLTRB(15.0, 10, 15, 0),
                           child: Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
@@ -131,22 +132,27 @@ class _PaymentPageState extends State<PaymentPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 const Padding(
-                                  padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                                  padding: EdgeInsets.fromLTRB(30, 20, 0, 4),
                                   child: Text(
                                     "Charging Session ID",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14),
                                   ),
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.fromLTRB(30, 5, 0, 20),
+                                      const EdgeInsets.fromLTRB(28, 5, 23, 17),
                                   child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: const [
-                                        Text("1523697125"),
+                                        Text("1234456789",
+                                            style: TextStyle(
+                                                color: Color(0XFF949495),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500)),
                                         Text(" ")
                                       ]),
                                 ),
@@ -159,9 +165,17 @@ class _PaymentPageState extends State<PaymentPage> {
                                       children: const [
                                         Expanded(
                                             flex: 4,
-                                            child: Text("Charging Cost")),
+                                            child: Text("Charging Cost",
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 14))),
                                         Expanded(
-                                            flex: 1, child: Text("\$11.20")),
+                                            flex: 2,
+                                            child: Text("\$11.20",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Color(0xFF949495)))),
                                       ]),
                                 ),
                               ],
@@ -170,7 +184,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         );
                       }),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Expanded(
@@ -187,23 +201,19 @@ class _PaymentPageState extends State<PaymentPage> {
                                 children: const [
                                   Expanded(
                                       flex: 4,
-                                      child: Text("Total Pament Received")),
-                                  Expanded(flex: 1, child: Text("\$200.15")),
+                                      child: Text("Total Pament Received",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14))),
+                                  Expanded(
+                                      flex: 2,
+                                      child: Text("\$200.15",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF949495)))),
                                 ]),
                           ),
-                          // child: Row(
-                          //   mainAxisAlignment:
-                          //       MainAxisAlignment.spaceBetween,
-                          //   children: const [
-                          //     Padding(
-                          //       padding: EdgeInsets.all(15.0),
-                          //       child: Expanded(
-                          //           flex: 50,
-                          //           child: Text("Total Pament Received")),
-                          //     ),
-                          //     Expanded(flex: 30, child: Text("\$200.15")),
-                          //   ],
-                          // )
                         ))),
                   ),
                 ],
